@@ -29,7 +29,7 @@ class MapboxNavigationView(private val context: ThemedReactContext) : Navigation
     private var destination: Point? = null
     private var shouldSimulateRoute = false
     private var showsEndOfRouteFeedback = false
-    private var customDirectionsUrl: String = null
+    private var directionsUrl: String = RouteUrl.BASE_URL
     private lateinit var navigationMapboxMap: NavigationMapboxMap
     private lateinit var mapboxNavigation: MapboxNavigation
 
@@ -94,7 +94,7 @@ class MapboxNavigationView(private val context: ThemedReactContext) : Navigation
             this.mapboxNavigation = MapboxNavigationProvider.create(navigationOptions)
             this.mapboxNavigation.requestRoutes(RouteOptions.builder()
                     .applyDefaultParams()
-                    .baseUrl(customDirectionsUrl)
+                    .baseUrl(directionsUrl)
                     .accessToken(accessToken)
                     .coordinates(mutableListOf(origin, destination))
                     .profile(RouteUrl.PROFILE_DRIVING)
@@ -220,8 +220,8 @@ class MapboxNavigationView(private val context: ThemedReactContext) : Navigation
         this.showsEndOfRouteFeedback = showsEndOfRouteFeedback
     }
 
-    fun setCustomDirectionsUrl(customDirectionsUrl: String) {
-        this.customDirectionsUrl = customDirectionsUrl
+    fun setDirectionsUrl(directionsUrl: String) {
+        this.directionsUrl = directionsUrl
     }
 
     fun onDropViewInstance() {

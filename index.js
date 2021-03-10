@@ -16,7 +16,7 @@ MapboxNavigation.propTypes = {
   onCancelNavigation: PropTypes.func,
   onArrive: PropTypes.func,
   showsEndOfRouteFeedback: PropTypes.bool,
-  customDirectionsUrl: PropTypes.string,
+  directionsUrl: PropTypes.string,
 };
 
 const RNMapboxNavigation = requireNativeComponent(
