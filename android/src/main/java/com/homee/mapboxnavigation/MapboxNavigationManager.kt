@@ -75,4 +75,9 @@ class MapboxNavigationManager(var mCallerContext: ReactApplicationContext) : Sim
     fun setShowsEndOfRouteFeedback(view: MapboxNavigationView, showsEndOfRouteFeedback: Boolean) {
         view.setShowsEndOfRouteFeedback(showsEndOfRouteFeedback)
     }
+
+    @ReactProp(name = "customDirectiosUrl")
+    fun setCustomDirectionsUrl(view: MapboxNavigationView, customDirectionsUrl: String) {
+        view.setCustomDirectionsUrl(customDirectionsUrl)
+    }
 }
